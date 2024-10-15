@@ -1,9 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Field, Label, Switch } from '@headlessui/react'
-import Navigation from '../components/Navigation'
-import LandingPage from './LandingPage'
 
 export default function NewVoter() {
   const [agreed, setAgreed] = useState(false)
@@ -19,10 +16,8 @@ export default function NewVoter() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Show success message
     setShowSuccess(true);
 
-    // Clear the form fields
     setFirstName('');
     setLastName('');
     setEmail('');
@@ -30,7 +25,6 @@ export default function NewVoter() {
     setPostCode('');
     setPhoneNumber('');
 
-    // After 5 seconds, redirect back to the landing page
     setTimeout(() => {
       setShowSuccess(false);
       navigate('/');
